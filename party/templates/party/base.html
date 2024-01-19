@@ -1,13 +1,27 @@
+{% load static %}
+{% load static tailwind_tags %}
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Party!</title>
+    <script src="{% static '/party/js/htmx.min.js' %}"></script>
+    {% tailwind_css %}
 </head>
-    <body>
-        <main>
-            {% block content %}
-            {% endblock %}
-        </main>
-    </body>
+
+<body class="bg-custom-powder-light">
+    <nav class="bg-custom-red">
+        <a href="/" class="inline-block">
+
+        </a>
+
+    </nav>
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+
 </html>

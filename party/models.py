@@ -3,8 +3,10 @@ from django.contrib.auth.models import AbstractUser
 from uuid import uuid4
 from django.conf import settings
 
+
 class CustomUser(AbstractUser):
     pass
+
 
 class Party(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid4)
@@ -39,4 +41,4 @@ class Guest(models.Model):
     party = models.ForeignKey(Party, on_delete=models.CASCADE, related_name="guests")
 
     def __str__(self):
-        return str(self.name) 
+        return str(self.name)
